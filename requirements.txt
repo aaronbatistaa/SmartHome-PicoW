@@ -1,0 +1,18 @@
+# Dependencias del backend IoT (Python PC)
+paho-mqtt==1.6.1
+#sqlite3 incluído en python
+
+#⚠ NO usa pip ni librerías instalables, solo módulos internos del firmware:
+#machine
+#utime / time
+#network
+#ujson
+#usocket
+#ustruct
+#random
+
+# Nota: El código de la Raspberry Pi Pico W usa MicroPython,
+# por lo tanto NO requiere dependencias instalables mediante pip.
+
+# Para usar:
+# pip install -r requirements.txt
