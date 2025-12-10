@@ -1,0 +1,14 @@
+{
+  "wifi_ssid": "TU_SSID",
+  "wifi_password": "TU_PASSWORD",
+  "adafruit_username": "TU_USUARIO_ADAFRUIT",
+  "adafruit_key": "TU_AIO_KEY",
+  "mqtt_client_id": "pico-w-smart-home",
+  "feeds": {
+    "temperature": "temperatura",
+    "humidity": "humedad",
+    "distance": "distancia",
+    "led_cmd": "led-cmd",
+    "buzzer_cmd": "buzzer-cmd"
+  }
+}
