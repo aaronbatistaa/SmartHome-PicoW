@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "smart-home-simon",
+  "editor": "wokwi",
+  "parts": [
+    { 
+      "type": "board-pi-pico-w", 
+      "id": "pico", 
+      "top": 16.05, 
+      "left": 157.2, 
+      "attrs": {} 
+    },
+    { 
+      "type": "wokwi-dht22", 
+      "id": "dht1", 
+      "top": 67.5, 
+      "left": 13.8, 
+      "attrs": {} 
+    },
+    { 
+      "type": "wokwi-hc-sr04", 
+      "id": "dist1", 
+      "top": 135.9, 
+      "left": 264.7, 
+      "attrs": { "distance": "50" } 
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 274.8,
+      "left": 80.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 272.75,
+      "left": 153.6,
+      "attrs": { "value": "220" }
+    },
+    { 
+      "type": "wokwi-buzzer", 
+      "id": "buzz1", 
+      "top": 261.6, 
+      "left": 251.4, 
+      "attrs": { "volume": "0.8" } 
+    }
+  ],
+  "connections": [
+    [ "pico:3V3", "dht1:VCC", "red", [ "v0" ] ],
+    [ "pico:GND.1", "dht1:GND", "black", [ "v0" ] ],
+    [ "pico:GP15", "dht1:SDA", "green", [ "v0" ] ],
+    [ "pico:3V3", "dist1:VCC", "red", [ "h0" ] ],
+    [ "pico:GND.2", "dist1:GND", "black", [ "h0" ] ],
+    [ "pico:GP5", "dist1:TRIG", "blue", [ "h0" ] ],
+    [ "pico:GP4", "dist1:ECHO", "green", [ "h0" ] ],
+    [ "pico:GP2", "led1:A", "yellow", [ "v0" ] ],
+    [ "led1:C", "r1:1", "yellow", [ "v0" ] ],
+    [ "r1:2", "pico:GND.3", "black", [ "v0" ] ],
+    [ "pico:GP3", "buzz1:1", "orange", [ "v0" ] ],
+    [ "buzz1:2", "pico:GND.4", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
